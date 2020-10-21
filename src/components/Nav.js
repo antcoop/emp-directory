@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   return (
     <nav>
-      <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/portfolio">Portfolio</Link>
+      <Link to={process.env.PUBLIC_URL + "/"}>Home</Link> |{" "}
+      <Link to={process.env.PUBLIC_URL + "/about"}>About</Link> |{" "}
+      <Link to={process.env.PUBLIC_URL + "/portfolio"}>Portfolio</Link>
     </nav>
   )
 }

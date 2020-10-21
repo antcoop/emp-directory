@@ -11,9 +11,9 @@ function App() {
       <div className="card">
         <Nav />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path={process.env.PUBLIC_URL + "/"} component={Home} />
+          <Route exact path={process.env.PUBLIC_URL + "/about"} component={About} />
+          <Route exact path={process.env.PUBLIC_URL + "/portfolio"} component={Portfolio} />
         </Switch>
       </div>
     </BrowserRouter>
