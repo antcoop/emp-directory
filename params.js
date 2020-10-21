@@ -3,7 +3,8 @@ const btn = {
   event: {
     MouseEvent: {
       target: "element",
-      action: null
+      action: null,
+      new: true
     }
   },
   addEventListener: function(event, cb) {
