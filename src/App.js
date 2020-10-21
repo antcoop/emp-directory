@@ -1,49 +1,22 @@
-import React, { useState, useEffect } from "react";
-import * as API from "./utils/API";
+import React from "react";
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 import "./App.css";
-
+import About from "./Pages/About";
+import Home from "./Pages/Home";
+import Portfolio from "./Pages/Portfolio";
+import Nav from "./components/Nav";
 function App() {
-  const [developerState, setDeveloperState] = useState({
-    excitementLevel: 0,
-    lifeLongLearner: true,
-    mood: "",
-    name: ""
-  });
-
-  useEffect(() => {
-    API.getDeveloper
-      .then(result => {
-        setDeveloperState(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, []);
-
   return (
-    <div className="card">
-      <img src={process.env.PUBLIC_URL + "/logo512.png"} alt="logo" />
-      <div>
-        Name: {developerState.name}
+    <BrowserRouter>
+      <div className="card">
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/portfolio" component={Portfolio} />
+        </Switch>
       </div>
-      <div>
-        Status: {developerState.mood}
-      </div>
-      <div>
-        Lifelong learner: {developerState.lifeLongLearner.toString()}
-      </div>
-      <div>
-        Excitement Level: {developerState.excitementLevel}
-      </div>
-      <div className="btn-group">
-        <button onClick={() => setDeveloperState({ ...developerState, mood: "lazy" })} className="btn btn-danger">
-          Encourage Laziness
-        </button>
-        <button onClick={() => setDeveloperState({ ...developerState, mood: "determined" })} className="btn btn-success">
-          Fill with Determination
-        </button>
-      </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
