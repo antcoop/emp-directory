@@ -13,8 +13,8 @@ function Project(props) {
               <h5 className="card-title">{props.title || ""}</h5>
               <p className="card-text">{props.description || ""}</p>
               <p className="card-text"><small className="text-muted">Completed August 2020</small></p>
-              <a href="#" class="btn btn-primary mr-2">Repo Link</a>
-              <a href="#" class="btn btn-primary">Project Link</a>
+              <a href="#repo" class="btn btn-primary mr-2">Repo Link</a>
+              <a href="#live" class="btn btn-primary">Project Link</a>
             </div>
           </div>
         </div>
