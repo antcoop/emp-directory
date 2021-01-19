@@ -10,7 +10,7 @@ function NavTabs() {
       <ul className="navbar-nav">
         <Item page="Home" path="/" />
         <Item page="About" path="/about" />
-        <Item page="Blog" path="/blog" />
+        <Item page="Projects" path="/projects" />
         <Item page="Contact" path="/contact" />
       </ul>
     </div>
